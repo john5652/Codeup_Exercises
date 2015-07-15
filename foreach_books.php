@@ -23,15 +23,15 @@
 	    )
 	);
 
-	foreach($books as $title => $book) {
-		if($book['published']> 1950) {
-			echo $title . PHP_EOL;
-			foreach ($book as $category => $details) {
-				echo $category . ': ' . "$details". PHP_EOL;
+		foreach($books as $title => $book) {
+			if($book['published']> 1950) {
+				echo $title . PHP_EOL;
+				foreach ($book as $category => $details) {
+					echo $category . ': ' . "$details". PHP_EOL;
+				}
+				echo "==========" . PHP_EOL;
 			}
-			echo "==========" . PHP_EOL;
-		}
-	}	
+		}	
  ?>
 	
 
