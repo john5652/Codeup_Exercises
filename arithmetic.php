@@ -4,32 +4,32 @@ function add($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
         return $a + $b;
     } else {
+        echo "You typed $a and $b"; 
         return "ERROR: Both arguments must be numbers\n";
-        return " $a $b"; 
     }
 }
 function subtract($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
         return $a - $b;
     } else {
+        echo "You typed $a and $b"; 
         return "ERROR: Both arguments must be numbers\n";
-        return " $a $b"; 
     }
 }
 function divide($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
         return $a / $b;
     } else {
+        echo "You typed $a and $b";
         return "ERROR: Both arguments must be numbers\n";
-        return " $a $b";
     }
 }
 function multiply($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
         return $a * $b;
     } else {
+        echo "You typed $a and $b";
         return "ERROR: Both arguments must be numbers\n";
-        return " $a $b";
     }
 }
 function modulus($a, $b) {
@@ -37,9 +37,11 @@ function modulus($a, $b) {
 	if ($a == '0' || $b == '0') {
 		return "Cannot divide by 0's.";
 	} elseif (is_numeric($a) && is_numeric($b)) {
-		return $a + $b; 
+		return $a % $b; 
 	} else  {
-		if (!is_numeric($a)) {
+		if (!is_numeric($a) && !is_numeric($b)) {
+			return "Neither $a nor $b is a number";
+		}elseif (!is_numeric($a)) {
 			return $message . " " . "$a is not a number.".PHP_EOL;
 		} elseif (!is_numeric($b)) {
 			return $message . " " . "$b is not a number".PHP_EOL;
